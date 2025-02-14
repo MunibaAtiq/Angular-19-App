@@ -1,12 +1,12 @@
 export const environment = {
     production:false,
     firebaseConfig : {
-        apiKey: "AIzaSyAcWAiOUfUTrWXaGMJL1cAYG1nsvkdY8xU",
+        apiKey: "addyourkey ",
         authDomain: "angularapp1-d50bf.firebaseapp.com",
-        databaseURL: "https://angularapp1-d50bf-default-rtdb.firebaseio.com",
-        projectId: "angularapp1-d50bf",
-        storageBucket: "angularapp1-d50bf.firebasestorage.app",
-        messagingSenderId: "930212819076",
-        appId: "1:930212819076:web:dc70564b092b21a3d992d1"
+        databaseURL: "https://ujhjdb.firebaseio.com",
+        projectId: "angularapp1-d50bjf",
+        storageBucket: "angularapp1-d50bhhhhf.firebasestorage.app",
+        messagingSenderId: "93021878787872819076",
+        appId: "1:930898212819076:web:dc8878770564b877887887092b21a3d992d1"
     }
 };
