@@ -1,0 +1,54 @@
+<div class="container">
+  <h2>Book Management</h2>
+
+  <!-- Success Message -->
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+
+  <!-- Book Form -->
+  <form (ngSubmit)="editMode ? updateBook() : addBook()">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" id="title" class="form-control" [(ngModel)]="newBook.title" name="title" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea id="description" class="form-control" [(ngModel)]="newBook.description" name="description" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{ editMode ? 'Update Book' : 'Add Book' }}</button>
+    <button type="button" class="btn btn-secondary" (click)="clearForm()" *ngIf="editMode">Cancel</button>
+  </form>
+
+  <!-- Search Filter -->
+   <div class="mt-3">
+    <input type="text" class="form-control" placeholder="search Books..." [(ngModel)]="filterText" (input)="applyFilter()">
+   </div>
+  <!-- Books Table -->
+  <table class="table table-bordered table-striped mt-4">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of filteredItems; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.description }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm" (click)="selectBookFOrEdit(book)">Edit</button>
+          <button class="btn btn-danger btn-sm ms-2" (click)="deleteBook(book.id)">Delete</button>
+        </td>
+      </tr>
+      <tr *ngIf="filteredItems.length === 0">
+        <td colspan="4">No Book Found..</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

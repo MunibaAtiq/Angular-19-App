@@ -1,0 +1,6 @@
+<h2>Login</h2>
+<div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+<input type="email" [(ngModel)]="email" placeholder="Email" class="form-control"><br>
+<input type="password" [(ngModel)]="password" placeholder="Password" class="form-control"><br>
+<p><a routerLink="/resetPassword">Forgot Password</a></p>
+<button (click)="login()" class="btn btn-primary">Login</button>

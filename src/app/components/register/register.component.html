@@ -1,0 +1,10 @@
+<div class="register-container">
+    <h2>Register</h2>
+    <input type="email" [(ngModel)]="email" placeholder="Enter Email" class="form-control"><br>
+    <input type="password" [(ngModel)]="password" placeholder="Enter Password" class="form-control"><br>
+    
+    <button class="btn btn-primary" (click)="registerUser()">Register</button>
+  
+    <p>Already have an account? <a routerLink="/login">Login here</a></p>
+  </div>
+  
